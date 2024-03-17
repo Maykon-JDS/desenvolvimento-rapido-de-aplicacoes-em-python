@@ -1,5 +1,5 @@
 from PessoaFisica import PessoaFisica
 
-class Aluno(PessoaFisica):
+class Docente(PessoaFisica):
     
     pass

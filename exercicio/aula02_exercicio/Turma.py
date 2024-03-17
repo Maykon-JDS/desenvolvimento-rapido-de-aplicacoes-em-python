@@ -1,20 +1,24 @@
 import uuid
 
-from .Aluno import Aluno #Não sei pq é assim
+from Aluno import Aluno #Não sei pq é assim
+
+from Disciplina import Disciplina
+
+from Turno import Turno
 
 class Turma:
         
-    _id: str
+    _id: uuid
     
-    _disciplina: str 
+    _disciplina: Disciplina 
     
-    _turno: str
+    _turno: Turno
 
     _horario: dict
 
     _alunos: list[Aluno]
 
-    def __init__(self, disciplina:str, turno:str, horario:dict = {"inicio": '00:00:00', "fim": "00:00:00"}, alunos:list[Aluno] = list()) -> None:
+    def __init__(self, disciplina:Disciplina, turno:Turno, horario:dict = {"inicio": '00:00:00', "fim": "00:00:00"}, alunos:list[Aluno] = list()) -> None:
         
         self._id = uuid.uuid4()
 
@@ -25,34 +29,49 @@ class Turma:
         self._horario = horario
 
         self._alunos = alunos
-
-    
     
     def getId(self) -> str:
-        pass
 
-    def getDisciplina(self) -> str:
-        pass
+        return self._id
 
-    def getTurno(self) -> str:
-        pass
+    def getDisciplina(self) -> Disciplina:
+        
+        return self._disciplina
+
+    def getTurno(self) -> Turno:
+        
+        return self._turno
 
     def getHorario(self) -> dict:
-        pass
+        
+        return self._horario
 
     def getAlunos(self) -> list[Aluno]:
-        pass
+        
+        return self._alunos
     
-    def setDisciplina(self, disciplina:str) -> str:
-        pass
+    def setDisciplina(self, disciplina:Disciplina) -> None:
+        
+        self._disciplina = disciplina
 
-    def setTurno(self, turno:str) -> str:
-        pass
+    def setTurno(self, turno:Turno) -> None:
+        
+        self._turno = turno
 
-    def setHorario(self, horario:dict) -> dict:
-        pass
+    def setHorario(self, horario:dict) -> None:
+        
+        self._horario = horario
 
-    def setAlunos(self, alunos:list[Aluno]) -> list[Aluno]:
-        pass
+    def setAlunos(self, alunos:list[Aluno]) -> None:
+        
+        self._alunos = alunos
+    
+    def appendAluno(self, aluno:Aluno) -> None:
+        
+        self._alunos.append(aluno)
+
+    def popAluno(self) -> None:
+        
+        self._alunos.pop()
 
     
