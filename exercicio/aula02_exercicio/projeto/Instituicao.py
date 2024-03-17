@@ -2,6 +2,8 @@ import uuid
 
 from Turma import Turma #Não sei pq é assim
 
+from Aluno import Aluno #Não sei pq é assim
+
 class Instituicao:
     
     _id: uuid
@@ -21,6 +23,18 @@ class Instituicao:
     def getId(self) -> uuid:
 
         return self._id  
+
+    def getListaAlunos(self) -> list[Aluno]:
+
+        alunos = list()
+
+        for turma in self._turmas:
+            
+            for aluno in turma.getAlunos():
+                
+                alunos.append(aluno)
+        
+        return alunos
     
     def getNome(self) -> str:
 
