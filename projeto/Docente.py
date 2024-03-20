@@ -1,4 +1,4 @@
-from PessoaFisica import PessoaFisica
+from .PessoaFisica import PessoaFisica
 
 class Docente(PessoaFisica):
     

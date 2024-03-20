@@ -1,8 +1,8 @@
 import uuid
 
-from Turma import Turma #Não sei pq é assim
+from .Turma import Turma #Não sei pq é assim
 
-from Aluno import Aluno #Não sei pq é assim
+from .Aluno import Aluno #Não sei pq é assim
 
 class Instituicao:
     

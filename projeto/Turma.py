@@ -1,12 +1,12 @@
 import uuid
 
-from Aluno import Aluno #Não sei pq é assim
+from .Aluno import Aluno #Não sei pq é assim
 
-from Docente import Docente #Não sei pq é assim
+from .Docente import Docente #Não sei pq é assim
 
-from Disciplina import Disciplina
+from .Disciplina import Disciplina
 
-from Turno import Turno
+from .Turno import Turno
 
 class Turma:
         
