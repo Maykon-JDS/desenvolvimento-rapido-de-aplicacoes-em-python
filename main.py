@@ -13,7 +13,7 @@ matriculado em uma turma de cada curso. As disciplinas serão ministradas
 por poucos docentes em suas respectivas áreas.
 '''
 
-from projeto import *
+from projeto.app import *
 
 aluno1 = Aluno("Maykon", 21, "18516803732")
 

@@ -1,0 +1,18 @@
+# This is a TOML comment.
+
+# This is a multiline 
+# TOML comment.
+
+str1 = "I'm a string."
+str2 = "You can use \"quotes\" in strings."
+str3 = "Name\tJos\u00E9\nLoc\tSF."
+
+str4 = """
+Roses are red
+Violets are blue"""
+
+str5 = """\
+    The quick brown \
+    fox jumps over \
+    the lazy dog.\
+    """
