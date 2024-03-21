@@ -13,7 +13,7 @@ matriculado em uma turma de cada curso. As disciplinas serão ministradas
 por poucos docentes em suas respectivas áreas.
 '''
 
-from projeto.app import *
+from app import *
 
 aluno1 = Aluno("Maykon", 21, "18516803732")
 
@@ -75,7 +75,7 @@ print(instituicao.getTurmas())
 print(instituicao.getListaAlunos())
 print()
 
-for aluno in instituicao.getListaAlunos(): 
+for aluno in instituicao.getListaAlunos():
     print(str(aluno.getNome())  + " - " + str(aluno.getIdade()) + " - " + str(aluno.getCpf()) + " - " + str(aluno.getId()))
 
 
