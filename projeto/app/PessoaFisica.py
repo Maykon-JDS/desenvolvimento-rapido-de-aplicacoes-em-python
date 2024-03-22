@@ -2,6 +2,8 @@ print("tetsetetet")
 
 import uuid
 
+from .InvalidCpfException import InvalidCpfException
+
 class PessoaFisica:
     
     _id: uuid
@@ -49,6 +51,8 @@ class PessoaFisica:
         self._idade = idade
     
     def setCpf(self, cpf) -> None:
+
+        self._verificarCpf(cpf)
         
         self._cpf = cpf
 
@@ -105,7 +109,7 @@ class PessoaFisica:
 
         if(not (str(primeiroDigitoVerificador) == cpf[9] and str(segundoDigitoVerificador) == cpf[10])):
             
-            raise Exception("CPF invalido!")
+            raise InvalidCpfException("CPF invalido!")
 
         
 
