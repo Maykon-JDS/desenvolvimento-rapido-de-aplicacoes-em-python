@@ -1,7 +1,11 @@
+"""This module does blah blah."""
+
 from enum import Enum
 
 class Disciplina(Enum):
-    
+
+    """This module does blah blah."""
+
     TI = "TI"
-    Administracao = "Administracao"
-    Direito = "Direito"
+    ADMINISTRACAO = "Administracao"
+    DIREITO = "Direito"

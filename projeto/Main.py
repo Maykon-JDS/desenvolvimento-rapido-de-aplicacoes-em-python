@@ -1,5 +1,5 @@
 '''Aula 02 - exemplo01a.py
-função : Sistema de registro de notas de alunos - 
+função : Sistema de registro de notas de alunos -
 Instituição pequena (i)
 Vantagens do RAD : Entregar o sistema através dos processos gerando
 protótipos que serão gradativamente atualizados. O conjunto de dados
@@ -13,7 +13,12 @@ matriculado em uma turma de cada curso. As disciplinas serão ministradas
 por poucos docentes em suas respectivas áreas.
 '''
 
-from app import *
+from app import Aluno
+from app import Docente
+from app import Instituicao
+from app import Turma
+from app import Turno
+from app import Disciplina
 
 aluno1 = Aluno("Maykon", 21, "18516803732")
 
@@ -29,53 +34,54 @@ docente1 = Docente("Antonio", 55, "99999999999")
 
 docente2 = Docente("Antonio", 55, "99999999999")
 
-turma1 = Turma(Disciplina.TI.value, docente1,Turno.Manha.value, { "inicio": '07:50:00',"fim": "11:30:00" }, [aluno1, aluno2])
+turma1 = Turma(Disciplina.TI.value, docente1,Turno.MANHA.value,
+                { "inicio": '07:50:00',"fim": "11:30:00" }, [aluno1, aluno2])
 
-turma1.appendAluno(aluno3)
+turma1.append_aluno(aluno3)
 
-turma2 = Turma(Disciplina.Administracao.value, docente2,Turno.Tarde.value, { "inicio": '12:00:00',"fim": "16:30:00" }, [aluno4, aluno5])
+turma2 = Turma(Disciplina.ADMINISTRACAO.value, docente2,Turno.TARDE.value,
+               { "inicio": '12:00:00',"fim": "16:30:00" }, [aluno4, aluno5])
 
 instituicao = Instituicao("Estacio de Sa", [turma1, turma2])
 
-print(docente1.getNome())
-print(docente1.getIdade())
-print(docente1.getId())
-print(docente1.getCpf())
+print(docente1.get_nome())
+print(docente1.get_idade())
+print(docente1.get_id())
+print(docente1.get_cpf())
 print()
 
-print(aluno1.getNome())
-print(aluno1.getIdade())
-print(aluno1.getId())
-print(aluno1.getCpf())
+print(aluno1.get_nome())
+print(aluno1.get_idade())
+print(aluno1.get_id())
+print(aluno1.get_cpf())
 print()
 
-print(aluno2.getNome())
-print(aluno2.getIdade())
-print(aluno2.getId())
-print(aluno2.getCpf())
+print(aluno2.get_nome())
+print(aluno2.get_idade())
+print(aluno2.get_id())
+print(aluno2.get_cpf())
 print()
 
-print(aluno3.getNome())
-print(aluno3.getIdade())
-print(aluno3.getId())
-print(aluno3.getCpf())
+print(aluno3.get_nome())
+print(aluno3.get_idade())
+print(aluno3.get_id())
+print(aluno3.get_cpf())
 print()
 
-print(turma1.getId())
-print(turma1.getTurno())
-print("Inicio:\t" + turma1.getHorario()['inicio'])
-print("Fim:\t" + turma1.getHorario()['fim'])
-print(turma1.getDisciplina())
-print(turma1.getAlunos())
+print(turma1.get_id())
+print(turma1.get_turno())
+print("Inicio:\t" + turma1.get_horario()['inicio'])
+print("Fim:\t" + turma1.get_horario()['fim'])
+print(turma1.get_disciplina())
+print(turma1.get_alunos())
 print()
 
-print(instituicao.getId())
-print(instituicao.getNome())
-print(instituicao.getTurmas())
-print(instituicao.getListaAlunos())
+print(instituicao.get_id())
+print(instituicao.get_nome())
+print(instituicao.get_turmas())
+print(instituicao.get_lista_alunos())
 print()
 
-for aluno in instituicao.getListaAlunos():
-    print(str(aluno.getNome())  + " - " + str(aluno.getIdade()) + " - " + str(aluno.getCpf()) + " - " + str(aluno.getId()))
-
-
+for aluno in instituicao.get_lista_alunos():
+    print(str(aluno.get_nome())  + " - " + str(aluno.get_idade()) +
+    " - " + str(aluno.get_cpf()) + " - " + str(aluno.get_id()))

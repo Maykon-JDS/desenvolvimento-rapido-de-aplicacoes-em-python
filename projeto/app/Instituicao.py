@@ -1,65 +1,88 @@
+"""This module does blah blah."""
+
 import uuid
 
-from .Turma import Turma #Não sei pq é assim
+from .turma import Turma #Não sei pq é assim
 
-from .Aluno import Aluno #Não sei pq é assim
+from .aluno import Aluno #Não sei pq é assim
 
 class Instituicao:
-    
+
+    """This module does blah blah."""
+
     _id: uuid
 
     _nome: str
-    
+
     _turmas: list[Turma]
 
     def __init__(self, nome:str, tumas:list[Turma] = list()) -> None:
-        
+
+
         self._id = uuid.uuid4()
 
         self._nome = nome
 
         self._turmas = tumas
 
-    def getId(self) -> uuid:
+    def get_id(self) -> uuid:
 
-        return self._id  
+        """This module does blah blah."""
 
-    def getListaAlunos(self) -> list[Aluno]:
+        return self._id
 
-        alunos = list()
+    def get_lista_alunos(self) -> list[Aluno]:
+
+        """This module does blah blah."""
+
+        alunos = []
 
         for turma in self._turmas:
-            
-            for aluno in turma.getAlunos():
-                
+
+            for aluno in turma.get_alunos():
+
                 alunos.append(aluno)
-        
+
         return alunos
-    
-    def getNome(self) -> str:
 
-        return self._nome  
+    def get_nome(self) -> str:
 
-    def getTurmas(self) -> list[Turma]:
-        
+        """This module does blah blah."""
+
+        return self._nome
+
+    def get_turmas(self) -> list[Turma]:
+
+        """This module does blah blah."""
+
         return self._turmas
-    
-    def setNome(self, nome:str) -> None:
 
-        self._nome = nome  
+    def set_nome(self, nome:str) -> None:
 
-    def setTurmas(self, tumas:list[Turma]) -> None:
-        
+        """This module does blah blah."""
+
+        self._nome = nome
+
+    def set_turmas(self, tumas:list[Turma]) -> None:
+
+        """This module does blah blah."""
+
         self._turmas = tumas
-    
-    def appendTurma(self, turma:Turma) -> None:
-        
+
+    def append_turma(self, turma:Turma) -> None:
+
+        """This module does blah blah."""
+
         self._turmas.append(turma)
-         
-    def popTurma(self) -> None:
-        
+
+    def pop_turma(self) -> None:
+
+        """This module does blah blah."""
+
         self._turmas.pop()
 
-    def clearTurmas(self) -> None:
+    def clear_turmas(self) -> None:
+
+        """This module does blah blah."""
 
         self._turmas.clear()

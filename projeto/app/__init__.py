@@ -1,10 +1,19 @@
-from .Aluno import Aluno
-from .Disciplina import Disciplina
-from .Docente import Docente
-from .Instituicao import Instituicao
-from .PessoaFisica import PessoaFisica
-from .Turma import Turma
-from .Turno import Turno
-from .InvalidCpfException import InvalidCpfException
+"""This module does blah blah."""
+
+from .aluno import Aluno
+
+from .disciplina import Disciplina
+
+from .docente import Docente
+
+from .instituicao import Instituicao
+
+from .pessoa_fisica import PessoaFisica
+
+from .turma import Turma
+
+from .turno import Turno
+
+from .invalid_cpf_exception import InvalidCpfException
 
 print("Hello!")

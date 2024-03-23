@@ -1,1 +1,1 @@
-# omegle
+![https://img.shields.io/badge/linting-pylint-yellowgreen](https://img.shields.io/badge/linting-pylint-yellowgreen)

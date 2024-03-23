@@ -1,7 +1,8 @@
-from .PessoaFisica import PessoaFisica 
+"""This module does blah blah."""
+
+from .pessoa_fisica import PessoaFisica
 
 class Aluno(PessoaFisica):
-
-    pass
+    """This module does blah blah."""
 
 print("hello!!!!")

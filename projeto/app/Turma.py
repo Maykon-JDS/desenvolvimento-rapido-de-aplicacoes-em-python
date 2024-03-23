@@ -1,19 +1,23 @@
+"""This module does blah blah."""
+
 import uuid
 
-from .Aluno import Aluno #Não sei pq é assim
+from .aluno import Aluno #Não sei pq é assim
 
-from .Docente import Docente #Não sei pq é assim
+from .docente import Docente #Não sei pq é assim
 
-from .Disciplina import Disciplina
+from .disciplina import Disciplina
 
-from .Turno import Turno
+from .turno import Turno
 
 class Turma:
-        
+
+    """This module does blah blah."""
+
     _id: uuid
-    
-    _disciplina: Disciplina 
-    
+
+    _disciplina: Disciplina
+
     _turno: Turno
 
     _horario: dict
@@ -22,8 +26,10 @@ class Turma:
 
     _docente: Docente
 
-    def __init__(self, disciplina:Disciplina, docente:Docente, turno:Turno, horario:dict = {"inicio": '00:00:00', "fim": "00:00:00"}, alunos:list[Aluno] = list()) -> None:
-        
+    def __init__(self, disciplina:Disciplina, docente:Docente, turno:Turno,
+                 horario:dict = {"inicio": '00:00:00', "fim": "00:00:00"},
+                 alunos:list[Aluno] = []) -> None:
+
         self._id = uuid.uuid4()
 
         self._disciplina = disciplina
@@ -35,57 +41,81 @@ class Turma:
         self._horario = horario
 
         self._alunos = alunos
-    
-    def getId(self) -> str:
+
+    def get_id(self) -> str:
+
+        """This module does blah blah."""
 
         return self._id
 
-    def getDisciplina(self) -> Disciplina:
-        
+    def get_disciplina(self) -> Disciplina:
+
+        """This module does blah blah."""
+
         return self._disciplina
-    
-    def getDocente(self) -> Docente:
-        
+
+    def get_docente(self) -> Docente:
+
+        """This module does blah blah."""
+
         return self._docente
 
-    def getTurno(self) -> Turno:
-        
+    def get_turno(self) -> Turno:
+
+        """This module does blah blah."""
+
         return self._turno
 
-    def getHorario(self) -> dict:
-        
+    def get_horario(self) -> dict:
+
+        """This module does blah blah."""
+
         return self._horario
 
-    def getAlunos(self) -> list[Aluno]:
-        
+    def get_alunos(self) -> list[Aluno]:
+
+        """This module does blah blah."""
+
         return self._alunos
-    
-    def setDisciplina(self, disciplina:Disciplina) -> None:
-        
+
+    def set_disciplina(self, disciplina:Disciplina) -> None:
+
+        """This module does blah blah."""
+
         self._disciplina = disciplina
-    
-    def setDocente(self, docente:Docente) -> None:
-        
+
+    def set_docente(self, docente:Docente) -> None:
+
+        """This module does blah blah."""
+
         self._docente = docente
 
-    def setTurno(self, turno:Turno) -> None:
-        
+    def set_turno(self, turno:Turno) -> None:
+
+        """This module does blah blah."""
+
         self._turno = turno
 
-    def setHorario(self, horario:dict) -> None:
-        
+    def set_horario(self, horario:dict) -> None:
+
+        """This module does blah blah."""
+
         self._horario = horario
 
-    def setAlunos(self, alunos:list[Aluno]) -> None:
-        
+    def set_alunos(self, alunos:list[Aluno]) -> None:
+
+        """This module does blah blah."""
+
         self._alunos = alunos
-    
-    def appendAluno(self, aluno:Aluno) -> None:
-        
+
+    def append_aluno(self, aluno:Aluno) -> None:
+
+        """This module does blah blah."""
+
         self._alunos.append(aluno)
 
-    def popAluno(self) -> None:
-        
-        self._alunos.pop()
+    def pop_aluno(self) -> None:
 
-    
+        """This module does blah blah."""
+
+        self._alunos.pop()
