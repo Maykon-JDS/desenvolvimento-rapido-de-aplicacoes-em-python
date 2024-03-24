@@ -91,4 +91,4 @@ class TestPessoaFisica:
 
         with pytest.raises(InvalidCpfException):
 
-            pessoa_fisica = PessoaFisica("João", 20, "12345678901")
+            pessoa_fisica = PessoaFisica("João", 20, "12345678901") # pylint: disable=unused-variable

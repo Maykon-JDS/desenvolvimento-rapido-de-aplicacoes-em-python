@@ -10,6 +10,8 @@ from .disciplina import Disciplina
 
 from .turno import Turno
 
+from .without_permission_to_teach_the_subject import WithoutPermissionToTeachTheSubject
+
 class Turma:
 
     """This module does blah blah."""
@@ -26,9 +28,12 @@ class Turma:
 
     _docente: Docente
 
-    def __init__(self, disciplina:Disciplina, docente:Docente, turno:Turno,
-                 horario:dict = {"inicio": '00:00:00', "fim": "00:00:00"},
-                 alunos:list[Aluno] = []) -> None:
+    def __init__(   self,   # pylint: disable=dangerous-default-value, too-many-arguments
+                    disciplina:Disciplina, docente:Docente, turno:Turno,
+                    horario:dict = {"inicio": '00:00:00', "fim": "00:00:00"},
+                    alunos:list[Aluno] = []) -> None:
+
+        self._verificar_se_docente_habilitado_para_disciplina(disciplina, docente)
 
         self._id = uuid.uuid4()
 
@@ -120,5 +125,13 @@ class Turma:
 
         self._alunos.pop()
 
-    def _verificar_se_docente_habilitado_para_disciplina(self):
-        pass
+    def _verificar_se_docente_habilitado_para_disciplina(self,
+                                                         disciplina: Disciplina,
+                                                         docente: Docente) -> None:
+
+        if not disciplina in docente.get_disciplinas_habilitadas_para_lecionar():
+
+            raise WithoutPermissionToTeachTheSubject("O docente não tem permissão \
+                                                    para lecionar essa disciplina")
+
+        print("test")
