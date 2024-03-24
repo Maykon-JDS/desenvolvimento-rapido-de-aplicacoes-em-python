@@ -119,3 +119,6 @@ class Turma:
         """This module does blah blah."""
 
         self._alunos.pop()
+
+    def _verificar_se_docente_habilitado_para_disciplina(self):
+        pass

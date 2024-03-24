@@ -80,9 +80,3 @@ class Instituicao:
         """This module does blah blah."""
 
         self._turmas.pop()
-
-    def clear_turmas(self) -> None:
-
-        """This module does blah blah."""
-
-        self._turmas.clear()

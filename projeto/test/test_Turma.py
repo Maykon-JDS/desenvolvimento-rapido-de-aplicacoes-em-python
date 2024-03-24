@@ -2,8 +2,6 @@
 
 import uuid
 
-# import pytest
-
 from . import Aluno
 
 from . import Disciplina
@@ -83,44 +81,130 @@ class TestTurma:
 
         assert turma.get_alunos() == [aluno]
 
-    # def test_setDisciplina(self, disciplina:Disciplina):
+    def test_set_disciplina(self):
 
-        # """This module does blah blah."""
+        """This module does blah blah."""
 
-    #     self._disciplina = disciplina
+        aluno = Aluno("João", 20, "18516803732")
 
-    # def test_setDocente(self, docente:Docente):
+        turma = Turma(Disciplina("TI"), Docente("Pedro", 44, "99999999999"), Turno('Manha'),
+                     {"inicio": '00:00:00', "fim": "00:00:00"}, [aluno])
 
-        # """This module does blah blah."""
+        turma.set_disciplina(Disciplina("Administracao"))
 
-    #     self._docente = docente
+        assert isinstance(turma.get_disciplina(), Disciplina)
 
-    # def test_setTurno(self, turno:Turno):
+        assert turma.get_disciplina().value == Disciplina.ADMINISTRACAO.value
 
-        # """This module does blah blah."""
+    def test_set_docente(self):
 
-    #     self._turno = turno
+        """This module does blah blah."""
 
-    # def test_setHorario(self, horario:dict):
+        turma = Turma(Disciplina("TI"), Docente("Pedro", 44, "99999999999"), Turno('Manha'),
+                     {"inicio": '00:00:00', "fim": "00:00:00"}, [Aluno("João", 20, "18516803732")])
 
-        # """This module does blah blah."""
+        docente = Docente("Carlos", 39, "99999999999")
 
-    #     self._horario = horario
+        turma.set_docente(docente)
 
-    # def test_setAlunos(self, alunos:list[Aluno]):
+        assert isinstance(turma.get_docente(), Docente)
 
-        # """This module does blah blah."""
+        assert turma.get_docente() == docente
 
-    #     self._alunos = alunos
 
-    # def test_appendAluno(self, aluno:Aluno):
+    def test_set_turno(self):
 
-        # """This module does blah blah."""
+        """This module does blah blah."""
 
-    #     self._alunos.append(aluno)
+        turma = Turma(Disciplina("TI"), Docente("Pedro", 44, "99999999999"), Turno('Manha'),
+                     {"inicio": '00:00:00', "fim": "00:00:00"}, [Aluno("João", 20, "18516803732")])
 
-    # def test_popAluno(self):
+        turma.set_turno(Turno("Tarde"))
 
-        # """This module does blah blah."""
+        assert isinstance(turma.get_turno(), Turno)
 
-    #     self._alunos.pop()
+        assert turma.get_turno().value == Turno.TARDE.value
+
+    def test_set_horario(self):
+
+        """This module does blah blah."""
+
+        turma = Turma(Disciplina("TI"), Docente("Pedro", 44, "99999999999"), Turno('Manha'),
+                     {"inicio": '00:00:00', "fim": "00:00:00"}, [Aluno("João", 20, "18516803732")])
+
+        turma.set_horario({"inicio": '7:50:00', "fim": "11:30:00"})
+
+        assert isinstance(turma.get_horario(), dict)
+
+        assert turma.get_horario() == {"inicio": '7:50:00', "fim": "11:30:00"}
+
+    def test_set_alunos(self):
+
+        """This module does blah blah."""
+
+        aluno1 = Aluno("João", 20, "18516803732")
+
+        aluno2 = Aluno("João", 30, "18516803732")
+
+        aluno3 = Aluno("João", 40, "18516803732")
+
+        turma = Turma(Disciplina("TI"), Docente("Pedro", 44, "99999999999"), Turno('Manha'),
+                     {"inicio": '00:00:00', "fim": "00:00:00"}, [aluno1, aluno2, aluno3])
+
+        aluno4 = Aluno("João", 50, "18516803732")
+
+        aluno5 = Aluno("João", 35, "18516803732")
+
+        aluno6 = Aluno("João", 25, "18516803732")
+
+        turma.set_alunos([aluno4, aluno5, aluno6])
+
+        assert turma.get_alunos() == [aluno4, aluno5, aluno6]
+
+    def test_append_aluno(self):
+
+        """This module does blah blah."""
+
+        aluno1 = Aluno("João", 20, "18516803732")
+
+        turma = Turma(Disciplina("TI"), Docente("Pedro", 44, "99999999999"), Turno('Manha'),
+                     {"inicio": '00:00:00', "fim": "00:00:00"}, [aluno1])
+
+        aluno2 = Aluno("João", 30, "18516803732")
+
+        assert turma.get_alunos() == [aluno1]
+
+        turma.append_aluno(aluno2)
+
+        assert turma.get_alunos() == [aluno1, aluno2]
+
+        aluno3 = Aluno("João", 40, "18516803732")
+
+        turma.append_aluno(aluno3)
+
+        assert turma.get_alunos() == [aluno1, aluno2, aluno3]
+
+    def test_pop_aluno(self):
+
+        """This module does blah blah."""
+
+        aluno1 = Aluno("João", 20, "18516803732")
+
+        aluno2 = Aluno("João", 30, "18516803732")
+
+        aluno3 = Aluno("João", 40, "18516803732")
+
+        turma = Turma(Disciplina("TI"), Docente("Pedro", 44, "99999999999"), Turno('Manha'),
+                     {"inicio": '00:00:00', "fim": "00:00:00"}, [aluno1, aluno2, aluno3])
+
+        turma.pop_aluno()
+
+        assert turma.get_alunos() == [aluno1, aluno2]
+
+        turma.pop_aluno()
+
+        assert turma.get_alunos() == [aluno1]
+
+        turma.pop_aluno()
+
+        assert turma.get_alunos() == []
