@@ -13,12 +13,17 @@ matriculado em uma turma de cada curso. As disciplinas serão ministradas
 por poucos docentes em suas respectivas áreas.
 '''
 
-from app import Aluno
-from app import Docente
-from app import Instituicao
-from app import Turma
-from app import Turno
-from app import Disciplina
+from app import Aluno # pylint: disable=import-error
+
+from app import Docente  # pylint: disable=import-error
+
+from app import Instituicao  # pylint: disable=import-error
+
+from app import Turma  # pylint: disable=import-error
+
+from app import Turno  # pylint: disable=import-error
+
+from app import Disciplina  # pylint: disable=import-error
 
 aluno1 = Aluno("Maykon", 21, "18516803732")
 
@@ -30,16 +35,16 @@ aluno4 = Aluno("Luiz", 23, "99999999999")
 
 aluno5 = Aluno("Felipe", 22, "99999999999")
 
-docente1 = Docente("Antonio", 55, "99999999999")
+docente1 = Docente("Antonio", 55, "99999999999", [Disciplina("TI")])
 
-docente2 = Docente("Antonio", 55, "99999999999")
+docente2 = Docente("Carlos", 44, "99999999999", [Disciplina("Direito")])
 
-turma1 = Turma(Disciplina.TI.value, docente1,Turno.MANHA.value,
+turma1 = Turma(Disciplina("TI"), docente1, Turno("Manha"),
                 { "inicio": '07:50:00',"fim": "11:30:00" }, [aluno1, aluno2])
 
 turma1.append_aluno(aluno3)
 
-turma2 = Turma(Disciplina.ADMINISTRACAO.value, docente2,Turno.TARDE.value,
+turma2 = Turma(Disciplina("Direito"), docente2, Turno("Tarde"),
                { "inicio": '12:00:00',"fim": "16:30:00" }, [aluno4, aluno5])
 
 instituicao = Instituicao("Estacio de Sa", [turma1, turma2])

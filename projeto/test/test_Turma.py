@@ -2,6 +2,8 @@
 
 import uuid
 
+import pytest
+
 from . import Aluno
 
 from . import Disciplina
@@ -12,6 +14,8 @@ from . import Turno
 
 from . import Turma
 
+from . import WithoutPermissionToTeachTheSubject
+
 class TestTurma:
 
     """This module does blah blah."""
@@ -20,8 +24,12 @@ class TestTurma:
 
         """This module does blah blah."""
 
-        turma = Turma(Disciplina("TI"), Docente("Pedro", 44, "99999999999"), Turno('Manha'),
-                     {"inicio": '00:00:00', "fim": "00:00:00"}, [Aluno("João", 20, "18516803732")])
+        turma = Turma(
+                        Disciplina("TI"),
+                        Docente("Pedro", 44, "99999999999", [Disciplina("TI")]),
+                        Turno('Manha'),
+                        {"inicio": '00:00:00', "fim": "00:00:00"},
+                        [Aluno("João", 20, "18516803732")])
 
         assert isinstance(turma.get_id(), uuid.UUID)
 
@@ -29,8 +37,12 @@ class TestTurma:
 
         """This module does blah blah."""
 
-        turma = Turma(Disciplina("TI"), Docente("Pedro", 44, "99999999999"), Turno('Manha'),
-                     {"inicio": '00:00:00', "fim": "00:00:00"}, [Aluno("João", 20, "18516803732")])
+        turma = Turma(
+                        Disciplina("TI"),
+                        Docente("Pedro", 44, "99999999999", [Disciplina("TI")]),
+                        Turno('Manha'),
+                        {"inicio": '00:00:00', "fim": "00:00:00"},
+                        [Aluno("João", 20, "18516803732")])
 
         assert isinstance(turma.get_disciplina(), Disciplina)
 
@@ -40,8 +52,11 @@ class TestTurma:
 
         """This module does blah blah."""
 
-        turma = Turma(Disciplina("TI"), Docente("Pedro", 44, "99999999999"), Turno('Manha'),
-                     {"inicio": '00:00:00', "fim": "00:00:00"}, [Aluno("João", 20, "18516803732")])
+        turma = Turma(  Disciplina("TI"),
+                        Docente("Pedro", 44, "99999999999", [Disciplina("TI")]),
+                        Turno('Manha'),
+                        {"inicio": '00:00:00', "fim": "00:00:00"},
+                        [Aluno("João", 20, "18516803732")])
 
         assert isinstance(turma.get_docente(),  Docente)
 
@@ -49,8 +64,11 @@ class TestTurma:
 
         """This module does blah blah."""
 
-        turma = Turma(Disciplina("TI"), Docente("Pedro", 44, "99999999999"), Turno('Manha'),
-                     {"inicio": '00:00:00', "fim": "00:00:00"}, [Aluno("João", 20, "18516803732")])
+        turma = Turma(  Disciplina("TI"),
+                        Docente("Pedro", 44, "99999999999", [Disciplina("TI")]),
+                        Turno('Manha'),
+                        {"inicio": '00:00:00', "fim": "00:00:00"},
+                        [Aluno("João", 20, "18516803732")])
 
         assert isinstance(turma.get_turno(), Turno)
 
@@ -60,8 +78,11 @@ class TestTurma:
 
         """This module does blah blah."""
 
-        turma = Turma(Disciplina("TI"), Docente("Pedro", 44, "99999999999"), Turno('Manha'),
-                     {"inicio": '00:00:00', "fim": "00:00:00"}, [Aluno("João", 20, "18516803732")])
+        turma = Turma(  Disciplina("TI"),
+                        Docente("Pedro", 44, "99999999999", [Disciplina("TI")]),
+                        Turno('Manha'),
+                        {"inicio": '00:00:00', "fim": "00:00:00"},
+                        [Aluno("João", 20, "18516803732")])
 
         assert isinstance(turma.get_horario(), dict)
 
@@ -74,8 +95,11 @@ class TestTurma:
 
         aluno = Aluno("João", 20, "18516803732")
 
-        turma = Turma(Disciplina("TI"), Docente("Pedro", 44, "99999999999"), Turno('Manha'),
-                     {"inicio": '00:00:00', "fim": "00:00:00"}, [aluno])
+        turma = Turma(  Disciplina("TI"),
+                        Docente("Pedro", 44, "99999999999", [Disciplina("TI")]),
+                        Turno('Manha'),
+                        {"inicio": '00:00:00', "fim": "00:00:00"},
+                        [aluno])
 
         assert isinstance(turma.get_alunos(), list)
 
@@ -87,8 +111,11 @@ class TestTurma:
 
         aluno = Aluno("João", 20, "18516803732")
 
-        turma = Turma(Disciplina("TI"), Docente("Pedro", 44, "99999999999"), Turno('Manha'),
-                     {"inicio": '00:00:00', "fim": "00:00:00"}, [aluno])
+        turma = Turma(  Disciplina("TI"),
+                        Docente("Pedro", 44, "99999999999", [Disciplina("TI")]),
+                        Turno('Manha'),
+                        {"inicio": '00:00:00', "fim": "00:00:00"},
+                        [aluno])
 
         turma.set_disciplina(Disciplina("Administracao"))
 
@@ -100,8 +127,11 @@ class TestTurma:
 
         """This module does blah blah."""
 
-        turma = Turma(Disciplina("TI"), Docente("Pedro", 44, "99999999999"), Turno('Manha'),
-                     {"inicio": '00:00:00', "fim": "00:00:00"}, [Aluno("João", 20, "18516803732")])
+        turma = Turma(  Disciplina("TI"),
+                        Docente("Pedro", 44, "99999999999", [Disciplina("TI")]),
+                        Turno('Manha'),
+                        {"inicio": '00:00:00', "fim": "00:00:00"},
+                        [Aluno("João", 20, "18516803732")])
 
         docente = Docente("Carlos", 39, "99999999999")
 
@@ -116,8 +146,11 @@ class TestTurma:
 
         """This module does blah blah."""
 
-        turma = Turma(Disciplina("TI"), Docente("Pedro", 44, "99999999999"), Turno('Manha'),
-                     {"inicio": '00:00:00', "fim": "00:00:00"}, [Aluno("João", 20, "18516803732")])
+        turma = Turma(  Disciplina("TI"),
+                        Docente("Pedro", 44, "99999999999", [Disciplina("TI")]),
+                        Turno('Manha'),
+                        {"inicio": '00:00:00', "fim": "00:00:00"},
+                        [Aluno("João", 20, "18516803732")])
 
         turma.set_turno(Turno("Tarde"))
 
@@ -129,8 +162,11 @@ class TestTurma:
 
         """This module does blah blah."""
 
-        turma = Turma(Disciplina("TI"), Docente("Pedro", 44, "99999999999"), Turno('Manha'),
-                     {"inicio": '00:00:00', "fim": "00:00:00"}, [Aluno("João", 20, "18516803732")])
+        turma = Turma(  Disciplina("TI"),
+                        Docente("Pedro", 44, "99999999999", [Disciplina("TI")]),
+                        Turno('Manha'),
+                        {"inicio": '00:00:00', "fim": "00:00:00"},
+                        [Aluno("João", 20, "18516803732")])
 
         turma.set_horario({"inicio": '7:50:00', "fim": "11:30:00"})
 
@@ -148,8 +184,11 @@ class TestTurma:
 
         aluno3 = Aluno("João", 40, "18516803732")
 
-        turma = Turma(Disciplina("TI"), Docente("Pedro", 44, "99999999999"), Turno('Manha'),
-                     {"inicio": '00:00:00', "fim": "00:00:00"}, [aluno1, aluno2, aluno3])
+        turma = Turma(  Disciplina("TI"),
+                        Docente("Pedro", 44, "99999999999", [Disciplina("TI")]),
+                        Turno('Manha'),
+                        {"inicio": '00:00:00', "fim": "00:00:00"},
+                        [aluno1, aluno2, aluno3])
 
         aluno4 = Aluno("João", 50, "18516803732")
 
@@ -167,8 +206,11 @@ class TestTurma:
 
         aluno1 = Aluno("João", 20, "18516803732")
 
-        turma = Turma(Disciplina("TI"), Docente("Pedro", 44, "99999999999"), Turno('Manha'),
-                     {"inicio": '00:00:00', "fim": "00:00:00"}, [aluno1])
+        turma = Turma(  Disciplina("TI"),
+                        Docente("Pedro", 44, "99999999999", [Disciplina("TI")]),
+                        Turno('Manha'),
+                        {"inicio": '00:00:00', "fim": "00:00:00"},
+                        [aluno1])
 
         aluno2 = Aluno("João", 30, "18516803732")
 
@@ -194,8 +236,11 @@ class TestTurma:
 
         aluno3 = Aluno("João", 40, "18516803732")
 
-        turma = Turma(Disciplina("TI"), Docente("Pedro", 44, "99999999999"), Turno('Manha'),
-                     {"inicio": '00:00:00', "fim": "00:00:00"}, [aluno1, aluno2, aluno3])
+        turma = Turma(  Disciplina("TI"),
+                        Docente("Pedro", 44, "99999999999", [Disciplina("TI")]),
+                        Turno('Manha'),
+                        {"inicio": '00:00:00', "fim": "00:00:00"},
+                        [aluno1, aluno2, aluno3])
 
         turma.pop_aluno()
 
@@ -208,3 +253,17 @@ class TestTurma:
         turma.pop_aluno()
 
         assert turma.get_alunos() == []
+
+    def test_verificar_se_docente_habilitado_para_disciplina(self):
+
+        """This module does blah blah."""
+
+        docente = Docente("Pedro", 44, "99999999999")
+
+        with pytest.raises(WithoutPermissionToTeachTheSubject):
+
+            turma = Turma(  Disciplina("TI"),   # pylint: disable=unused-variable
+                            docente,
+                            Turno('Manha'),
+                            {"inicio": '00:00:00', "fim": "00:00:00"},
+                            [])

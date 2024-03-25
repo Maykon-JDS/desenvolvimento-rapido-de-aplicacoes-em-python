@@ -131,7 +131,5 @@ class Turma:
 
         if not disciplina in docente.get_disciplinas_habilitadas_para_lecionar():
 
-            raise WithoutPermissionToTeachTheSubject("O docente não tem permissão \
-                                                    para lecionar essa disciplina")
-
+            raise WithoutPermissionToTeachTheSubject("O docente não tem permissão para lecionar essa disciplina") # pylint: disable=line-too-long
         print("test")

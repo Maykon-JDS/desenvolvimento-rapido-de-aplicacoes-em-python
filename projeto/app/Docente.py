@@ -10,12 +10,11 @@ class Docente(PessoaFisica):
 
     _disciplinas_habilitadas_para_lecionar: [Disciplina] or [None]
 
-    def __init__(   # pylint: disable=dangerous-default-value
-                 self,
-                 nome: str,
-                 idade: int,
-                 cpf: str,
-                 disciplinas_habilitadas_para_lecionar: [Disciplina] = [None]) -> None:
+    def __init__(   self, # pylint: disable=dangerous-default-value
+                    nome: str,
+                    idade: int,
+                    cpf: str,
+                    disciplinas_habilitadas_para_lecionar: [Disciplina] = [None]) -> None:
 
         super().__init__(nome, idade, cpf)
 
@@ -27,8 +26,7 @@ class Docente(PessoaFisica):
 
         return self._disciplinas_habilitadas_para_lecionar
 
-    def set_disciplinas_habilitadas_para_lecionar(
-                                                    self,
+    def set_disciplinas_habilitadas_para_lecionar(  self,
                                                     disciplinas_habilitadas_para_lecionar:
                                                     [Disciplina] or [None]) -> None:
 
