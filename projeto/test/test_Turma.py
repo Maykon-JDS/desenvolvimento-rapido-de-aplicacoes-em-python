@@ -24,8 +24,7 @@ class TestTurma:
 
         """This module does blah blah."""
 
-        turma = Turma(
-                        Disciplina("TI"),
+        turma = Turma(  Disciplina("TI"),
                         Docente("Pedro", 44, "99999999999", [Disciplina("TI")]),
                         Turno('Manha'),
                         {"inicio": '00:00:00', "fim": "00:00:00"},
@@ -37,8 +36,7 @@ class TestTurma:
 
         """This module does blah blah."""
 
-        turma = Turma(
-                        Disciplina("TI"),
+        turma = Turma(  Disciplina("TI"),
                         Docente("Pedro", 44, "99999999999", [Disciplina("TI")]),
                         Turno('Manha'),
                         {"inicio": '00:00:00', "fim": "00:00:00"},
@@ -105,7 +103,25 @@ class TestTurma:
 
         assert turma.get_alunos() == [aluno]
 
-    def test_set_disciplina(self):
+    def test_set_disciplina_valid(self):
+
+        """This module does blah blah."""
+
+        aluno = Aluno("João", 20, "18516803732")
+
+        turma = Turma(  Disciplina("TI"),
+                        Docente("Pedro", 44, "99999999999", [Disciplina("TI"), Disciplina("Administracao")]), # pylint: disable=line-too-long
+                        Turno('Manha'),
+                        {"inicio": '00:00:00', "fim": "00:00:00"},
+                        [aluno])
+
+        turma.set_disciplina(Disciplina("Administracao"))
+
+        assert isinstance(turma.get_disciplina(), Disciplina)
+
+        assert turma.get_disciplina().value == Disciplina.ADMINISTRACAO.value
+
+    def test_set_disciplina_invalid(self):
 
         """This module does blah blah."""
 
@@ -117,11 +133,9 @@ class TestTurma:
                         {"inicio": '00:00:00', "fim": "00:00:00"},
                         [aluno])
 
-        turma.set_disciplina(Disciplina("Administracao"))
+        with pytest.raises(WithoutPermissionToTeachTheSubject):
 
-        assert isinstance(turma.get_disciplina(), Disciplina)
-
-        assert turma.get_disciplina().value == Disciplina.ADMINISTRACAO.value
+            turma.set_disciplina(Disciplina("Administracao"))
 
     def test_set_docente(self):
 
@@ -267,3 +281,41 @@ class TestTurma:
                             Turno('Manha'),
                             {"inicio": '00:00:00', "fim": "00:00:00"},
                             [])
+
+    def test_get_duracao_aula(self):
+
+        """This module does blah blah."""
+
+        turma = Turma(  Disciplina("TI"),
+                        Docente("Pedro", 44, "99999999999", [Disciplina("TI")]),
+                        Turno('Manha'),
+                        {"inicio": '00:07:00', "fim": "00:12:00"},
+                        [])
+
+        assert turma.get_duracao_aula() == "0:05:00"
+
+
+    def test_verificar_turno(self) -> None:
+
+        """This module does blah blah."""
+
+        turma = Turma(  Disciplina("TI"),
+                        Docente("Pedro", 44, "99999999999", [Disciplina("TI")]),
+                        Turno('Manha'),
+                        {"inicio": '00:07:00', "fim": "00:12:00"},
+                        [])
+
+        assert turma.get_duracao_aula() == "0:05:00"
+
+
+        pass
+
+    # def test_verificar_duracao_aula_valid(self):
+
+    #     """This module does blah blah."""
+
+    #     turma = Turma(  Disciplina("TI"),
+    #                     Docente("Pedro", 44, "99999999999", Disciplina("TI")),
+    #                     Turno('Manha'),
+    #                     {"inicio": '00:00:00', "fim": "00:00:00"},
+    #                     [])

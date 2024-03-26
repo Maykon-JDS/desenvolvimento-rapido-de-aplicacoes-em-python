@@ -2,6 +2,8 @@
 
 import uuid
 
+from datetime import datetime
+
 from .aluno import Aluno #Não sei pq é assim
 
 from .docente import Docente #Não sei pq é assim
@@ -87,6 +89,8 @@ class Turma:
 
         """This module does blah blah."""
 
+        self._verificar_se_docente_habilitado_para_disciplina(disciplina, self._docente)
+
         self._disciplina = disciplina
 
     def set_docente(self, docente:Docente) -> None:
@@ -129,7 +133,48 @@ class Turma:
                                                          disciplina: Disciplina,
                                                          docente: Docente) -> None:
 
+        """This module does blah blah."""
+
         if not disciplina in docente.get_disciplinas_habilitadas_para_lecionar():
 
             raise WithoutPermissionToTeachTheSubject("O docente não tem permissão para lecionar essa disciplina") # pylint: disable=line-too-long
-        print("test")
+
+    def get_duracao_aula(self) -> str:
+
+        """This module does blah blah."""
+
+        tempo_inicio = datetime.strptime(self._horario['inicio'], "%H:%M:%S")
+
+        tempo_fim = datetime.strptime(self._horario['fim'], "%H:%M:%S")
+
+        tempo_delta = tempo_fim - tempo_inicio
+
+        return  str(tempo_delta)
+
+    def _verificar_turno(self) -> None:
+
+        """This module does blah blah."""
+
+        tempo_inicio = datetime.strptime(self._horario['inicio'], "%H:%M:%S")
+
+        tempo_fim = datetime.strptime(self._horario['fim'], "%H:%M:%S")
+
+        tempo_inicio_manha = datetime.strptime("06:00:00", "%H:%M:%S")
+
+        tempo_fim_manha = datetime.strptime("12:00:00", "%H:%M:%S")
+
+        tempo_inicio_tarde = datetime.strptime("12:00:00", "%H:%M:%S")
+
+        tempo_fim_tarde = datetime.strptime("18:00:00", "%H:%M:%S")
+
+        tempo_inicio_noite = datetime.strptime("18:00:00", "%H:%M:%S")
+
+        tempo_fim_noite = datetime.strptime("24:00:00", "%H:%M:%S")
+
+        if self._turno == Turno.MANHA and tempo_inicio >= tempo_inicio_manha and tempo_fim <= tempo_fim_manha:
+
+            print("tempo inicio menor que tempo")
+
+    # def _verificar_duracao_aula(self, horario:dict) -> None:
+
+    #     pass
