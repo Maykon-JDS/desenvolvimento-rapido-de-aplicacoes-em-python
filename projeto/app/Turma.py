@@ -186,7 +186,3 @@ class Turma:
         elif turno == Turno.NOITE and not (tempo_inicio >= tempo_inicio_noite and tempo_fim <= tempo_fim_noite):
 
             raise ClassTimeOutsideTheDefinedShift("Horário fora do período de aula de Noite | (18:00:00 - 00:00:00)")
-
-    # def _verificar_duracao_aula(self, horario:dict) -> None:
-
-    #     pass

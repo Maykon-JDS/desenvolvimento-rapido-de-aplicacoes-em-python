@@ -307,13 +307,3 @@ class TestTurma:
                             Turno('Manha'),
                             {"inicio": '00:07:00', "fim": "00:13:00"},
                             [])
-
-    # def test_verificar_duracao_aula_valid(self):
-
-    #     """This module does blah blah."""
-
-    #     turma = Turma(  Disciplina("TI"),
-    #                     Docente("Pedro", 44, "99999999999", Disciplina("TI")),
-    #                     Turno('Manha'),
-    #                     {"inicio": '06:00:00', "fim": "12:00:00"},
-    #                     [])

@@ -18,7 +18,6 @@ class Instituicao:
 
     def __init__(self, nome:str, tumas:list[Turma] = [None]) -> None:  # pylint: disable=dangerous-default-value
 
-
         self._id = uuid.uuid4()
 
         self._nome = nome
