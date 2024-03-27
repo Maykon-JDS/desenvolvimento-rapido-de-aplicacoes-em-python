@@ -40,7 +40,7 @@ class TestInstituicao:
                         Disciplina("TI"),
                         Docente("Pedro", 44, "99999999999", [Disciplina("TI")]),
                         Turno('Manha'),
-                        {"inicio": '00:00:00', "fim": "00:00:00"},
+                        {"inicio": '06:00:00', "fim": "12:00:00"},
                         [aluno1, aluno2, aluno3])
 
         aluno4 = Aluno("Lucas", 19, "18516803732")
@@ -53,7 +53,7 @@ class TestInstituicao:
                         Disciplina("TI"),
                         Docente("Antônio", 50, "99999999999", [Disciplina("TI")]),
                         Turno('Manha'),
-                        {"inicio": '00:00:00', "fim": "00:00:00"},
+                        {"inicio": '06:00:00', "fim": "12:00:00"},
                         [aluno4, aluno5, aluno6])
 
         instituicao = Instituicao("Estácio de Sá", [turma1, turma2])
@@ -76,14 +76,14 @@ class TestInstituicao:
                         Disciplina("TI"),
                         Docente("Pedro", 44, "99999999999", [Disciplina("TI")]),
                         Turno('Manha'),
-                        {"inicio": '00:00:00', "fim": "00:00:00"},
+                        {"inicio": '06:00:00', "fim": "12:00:00"},
                         [Aluno("Maykon", 21, "18516803732")])
 
         turma2 = Turma(
                         Disciplina("TI"),
                         Docente("Antônio", 50, "99999999999", [Disciplina("TI")]),
                         Turno('Manha'),
-                        {"inicio": '00:00:00', "fim": "00:00:00"},
+                        {"inicio": '06:00:00', "fim": "12:00:00"},
                         [Aluno("João", 19, "18516803732")])
 
         instituicao = Instituicao("Estácio de Sá", [turma1, turma2])
@@ -109,21 +109,21 @@ class TestInstituicao:
                         Disciplina("Direito"),
                         Docente("Pedro", 44, "99999999999", [Disciplina("Direito")]),
                         Turno('Manha'),
-                        {"inicio": '00:00:00', "fim": "00:00:00"},
+                        {"inicio": '06:00:00', "fim": "12:00:00"},
                         [Aluno("Maykon", 21, "18516803732")])
 
         turma2 = Turma(
                         Disciplina("TI"),
                         Docente("Antônio", 50, "99999999999", [Disciplina("TI")]),
                         Turno('Manha'),
-                        {"inicio": '00:00:00', "fim": "00:00:00"},
+                        {"inicio": '06:00:00', "fim": "12:00:00"},
                         [Aluno("João", 19, "18516803732")])
 
         turma3 = Turma(
                         Disciplina("Administracao"),
                         Docente("Antônio", 50, "99999999999", [Disciplina("Administracao")]),
                         Turno('Manha'),
-                        {"inicio": '00:00:00', "fim": "00:00:00"},
+                        {"inicio": '06:00:00', "fim": "12:00:00"},
                         [Aluno("João", 19, "18516803732")])
 
         instituicao = Instituicao("Estácio de Sá", [turma1])
@@ -140,21 +140,21 @@ class TestInstituicao:
                         Disciplina("Direito"),
                         Docente("Pedro", 44, "99999999999", [Disciplina("Direito")]),
                         Turno('Manha'),
-                        {"inicio": '00:00:00', "fim": "00:00:00"},
+                        {"inicio": '06:00:00', "fim": "12:00:00"},
                         [Aluno("Maykon", 21, "18516803732")])
 
         turma2 = Turma(
                         Disciplina("TI"),
                         Docente("Antônio", 50, "99999999999", [Disciplina("TI")]),
                         Turno('Manha'),
-                        {"inicio": '00:00:00', "fim": "00:00:00"},
+                        {"inicio": '06:00:00', "fim": "12:00:00"},
                         [Aluno("João", 19, "18516803732")])
 
         turma3 = Turma(
                         Disciplina("Administracao"),
                         Docente("Antônio", 50, "99999999999", [Disciplina("Administracao")]),
                         Turno('Manha'),
-                        {"inicio": '00:00:00', "fim": "00:00:00"},
+                        {"inicio": '06:00:00', "fim": "12:00:00"},
                         [Aluno("João", 19, "18516803732")])
 
         instituicao = Instituicao("Estácio de Sá", [turma1])
@@ -175,21 +175,21 @@ class TestInstituicao:
                         Disciplina("Direito"),
                         Docente("Pedro", 44, "99999999999", [Disciplina("Direito")]),
                         Turno('Manha'),
-                        {"inicio": '00:00:00', "fim": "00:00:00"},
+                        {"inicio": '06:00:00', "fim": "12:00:00"},
                         [Aluno("Maykon", 21, "18516803732")])
 
         turma2 = Turma(
                         Disciplina("TI"),
                         Docente("Antônio", 50, "99999999999", [Disciplina("TI")]),
                         Turno('Manha'),
-                        {"inicio": '00:00:00', "fim": "00:00:00"},
+                        {"inicio": '06:00:00', "fim": "12:00:00"},
                         [Aluno("João", 19, "18516803732")])
 
         turma3 = Turma(
                         Disciplina("Administracao"),
                         Docente("Antônio", 50, "99999999999", [Disciplina("Administracao")]),
                         Turno('Manha'),
-                        {"inicio": '00:00:00', "fim": "00:00:00"},
+                        {"inicio": '06:00:00', "fim": "12:00:00"},
                         [Aluno("João", 19, "18516803732")])
 
         instituicao = Instituicao("Estácio de Sá", [turma1, turma2, turma3])

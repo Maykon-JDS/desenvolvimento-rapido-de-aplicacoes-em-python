@@ -18,4 +18,6 @@ from .invalid_cpf_exception import InvalidCpfException
 
 from .without_permission_to_teach_the_subject import WithoutPermissionToTeachTheSubject
 
+from .class_time_outside_the_defined_shift import ClassTimeOutsideTheDefinedShift
+
 print("Hello!")

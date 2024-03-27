@@ -17,3 +17,5 @@ from projeto.app import Turno
 from projeto.app import InvalidCpfException
 
 from projeto.app import WithoutPermissionToTeachTheSubject
+
+from projeto.app import ClassTimeOutsideTheDefinedShift
