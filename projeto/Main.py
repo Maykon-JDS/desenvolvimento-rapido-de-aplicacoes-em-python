@@ -25,6 +25,8 @@ from app import Turno  # pylint: disable=import-error
 
 from app import Disciplina  # pylint: disable=import-error
 
+from app import Ordenador  # pylint: disable=import-error
+
 aluno1 = Aluno("Maykon", 21, "18516803732")
 
 aluno2 = Aluno("Pedro", 23, "99999999999")
@@ -80,14 +82,15 @@ print("Fim:\t" + turma1.get_horario()['fim'])
 print(turma1.get_disciplina())
 print(turma1.get_alunos())
 print(turma1.get_duracao_aula())
-turma1._verificar_turno()
 
 print(instituicao.get_id())
 print(instituicao.get_nome())
 print(instituicao.get_turmas())
-print(instituicao.get_lista_alunos())
+# print(instituicao.get_lista_alunos())
 print()
 
 for aluno in instituicao.get_lista_alunos():
     print(str(aluno.get_nome())  + " - " + str(aluno.get_idade()) +
     " - " + str(aluno.get_cpf()) + " - " + str(aluno.get_id()))
+
+print(Ordenador.ordenar_simples(instituicao, "get_nome"))

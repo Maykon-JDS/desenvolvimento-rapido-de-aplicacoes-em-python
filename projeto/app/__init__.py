@@ -14,6 +14,8 @@ from .turma import Turma
 
 from .turno import Turno
 
+from .ordenador import Ordenador
+
 from .invalid_cpf_exception import InvalidCpfException
 
 from .without_permission_to_teach_the_subject import WithoutPermissionToTeachTheSubject
