@@ -14,6 +14,8 @@ from projeto.app import Turma
 
 from projeto.app import Turno
 
+from projeto.app import Ordenador
+
 from projeto.app import InvalidCpfException
 
 from projeto.app import WithoutPermissionToTeachTheSubject

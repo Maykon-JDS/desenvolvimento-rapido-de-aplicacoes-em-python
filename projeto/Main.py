@@ -93,4 +93,5 @@ for aluno in instituicao.get_lista_alunos():
     print(str(aluno.get_nome())  + " - " + str(aluno.get_idade()) +
     " - " + str(aluno.get_cpf()) + " - " + str(aluno.get_id()))
 
-print(Ordenador.ordenar_simples(instituicao, "get_nome"))
+ordenador = Ordenador()
+ordenador.ordenar_simples(instituicao, "pop_turma")

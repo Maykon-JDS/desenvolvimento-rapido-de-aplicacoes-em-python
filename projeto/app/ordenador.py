@@ -10,11 +10,16 @@ class Ordenador:
 
     """This module does blah blah."""
 
-    @staticmethod
-    def ordenar_simples(objeto, dado):
+    def __init__(self):
 
         """This module does blah blah."""
 
-        if type(getattr(objeto, dado)) == types.MethodType:
+    def ordenar_simples(self, objeto, dado):
 
-            return signature(getattr(objeto, dado)).return_annotation
+        """This module does blah blah."""
+
+        if (type(getattr(objeto, dado)) == types.MethodType) and (signature(getattr(objeto, dado)).return_annotation != None):
+
+
+
+            print(signature(getattr(objeto, dado)).return_annotation)
