@@ -141,7 +141,7 @@ class Main():
                 case 2:
                     self.showAlunos()
                 case 3:
-                    pass
+                    self.loopPesquisarAluno()
                 case 4:
                     os.system('cls')
                     print("Programa finalizado!")
@@ -232,21 +232,67 @@ class Main():
 
         os.system('cls')
 
-    def pesquisarAluno(alunos, campo, valor):
+    def loopPesquisarAluno(self):
+
+        """
+        Realiza um loop para que o usuario possa realizar a pesquisa de
+        vários alunos seguidos. O loop somente é encerrado quando o usuario
+        digita 'n' como resposta.
+
+        Returns
+        -------
+        None
+        """
+
+        resposta = 0
+
+        while True:
+
+            os.system('cls')
+
+            match resposta:
+                case 0 | "s":
+                    campo = input(f"Qual campo deseja pesquisar? (nome, email ou curso)\n")
+                    valor = input(f"Qual valor deseja pesquisar?\n")
+
+                    alunosFiltrados = self.pesquisarAluno(campo, valor)
+
+                    if alunosFiltrados:
+
+                        for index, aluno in enumerate(alunosFiltrados, start=1):
+
+                            print(f"\nAluno {index} | Nome: {aluno['nome']}, Email: {aluno['email']}, Curso: {aluno['curso']}\n")
+
+                case 'n':
+                    break
+
+                case _:
+                    print(f"Valor {resposta} inválido!")
+
+            resposta = input(f"Deseja pesquisar novamente? (s/n)\n")
+
+
+    def pesquisarAluno(self, campo, valor):
+
+        alunosJson = str(f"{self.arquivo.getArquivo()}")
+
+        alunos = json.loads(str(f"[{alunosJson}]"))
 
         match campo:
             case 'nome':
-                resultados = [aluno for aluno in alunos if aluno.nome == valor]
+                resultados = [aluno for aluno in alunos if valor in aluno['nome']]
             case 'email':
-                resultados = [aluno for aluno in alunos if aluno.email == valor]
+                resultados = [aluno for aluno in alunos if valor in aluno['email']]
             case 'curso':
-                resultados = [aluno for aluno in alunos if aluno.curso == valor]
+                resultados = [aluno for aluno in alunos if valor in aluno['curso']]
             case _:
                 print(f"Campo {campo} inválido!")
+                return False
 
-        if resultados and campo in ('nome', 'email', 'curso'):
+        if resultados:
             return resultados
         else:
-            return f"Aluno com o {campo} '{valor}' não encontrado."
+            print(f"Aluno com o {campo} '{valor}' não encontrado.")
+            return False
 
 Main()
